@@ -8,4 +8,6 @@ class Range:
 
     def __init__(self, entered_range: str) -> None:
         entered_range = entered_range.strip()
+        if not (all(range_symbol in VALID_SYMBOLS for range_symbol in entered_range)):
+            raise SyntaxError("Invalid range")
         
