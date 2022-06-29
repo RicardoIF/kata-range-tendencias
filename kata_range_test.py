@@ -31,4 +31,14 @@ class TestEndPoints(unittest.TestCase):
         self.assertEqual(rnge.endPoints, [2,3])
 
 class TestOverlaps(unittest.TestCase):
-    
+    def test_range_overlaps_true(self):
+        first_range = Range("[4, 10]")
+        second_range = Range("[4, 12]")
+        self.assertEqual(first_range.overlapsRange(second_range), True)
+    def test_range_overlaps_true(self):
+        first_range = Range("[4, 10]")
+        second_range = Range("[12, 22]")
+        self.assertEqual(first_range.overlapsRange(second_range), False)
+
+if __name__ == "__main__":
+    unittest.main()
