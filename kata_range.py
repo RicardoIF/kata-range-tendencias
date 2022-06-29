@@ -38,4 +38,6 @@ class Range:
         if(self.endpoints[0] > self.endpoints[1]):
             raise ValueError("Invalid range")
         
+        self.limit_symbols = [botton_limit, top_limit]
+        
         

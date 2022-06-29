@@ -18,4 +18,8 @@ class TestKataRange(unittest.TestCase):
         kata_range.botton_limit = "X"
         kata_range.botton_limit.assertRaises(Exception, "Invalid range")
 
+    def test_bottomlimit_greater_than_toplimit(self):
+        kata_range.botton_limit = 7
+        kata_range.top_limit = 6
+        kata_range.botton_limit.assertRaises(Exception, "Invalid range")
 
