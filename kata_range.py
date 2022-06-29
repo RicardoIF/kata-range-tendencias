@@ -26,6 +26,16 @@ class Range:
             if not (limit.isdigit()):
                 raise Exception("Invalid range")
             numberLimit = int(limit)
-            self.endpints.append(numberLimit)
+            self.endpoints.append(numberLimit)
             self.raw_endpoints.apppend(numberLimit)
+        
+        if(botton_limit == "("):
+            self.endpoints[0] += 1
 
+        if(top_limit == ")"):
+            self.endpoints[1] -= 1
+        
+        if(self.endpoints[0] > self.endpoints[1]):
+            raise ValueError("Invalid range")
+        
+        
