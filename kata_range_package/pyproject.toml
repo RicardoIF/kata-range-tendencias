@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kata_range_package"
+version = "1.0.0"
+authors = [
+  { name="Bartomeu Mas and Endy Ricardo", email="bartomeumas00@gmail.com and endy5039@gmail.com" },
+]
+description = "Kata range package"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/RicardoIF/kata-range-tendencias"
