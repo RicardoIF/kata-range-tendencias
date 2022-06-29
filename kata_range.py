@@ -13,9 +13,9 @@ class Range:
         if not (entered_range.startswith(("(", "[") and entered_range.endswith(")", "]"))):
             raise SyntaxError("Invalid range")
         
-        botton_limit = entered_range[0]
+        bottom_limit = entered_range[0]
         top_limit = entered_range[1]
-
+        entered_range = entered_range.replace(bottom_limit, "", 1).replace(top_limit, "", 1)
         limits = entered_range.split(",")
 
         if not (len(limits) == 2):
@@ -29,7 +29,7 @@ class Range:
             self.endpoints.append(numberLimit)
             self.raw_endpoints.apppend(numberLimit)
         
-        if(botton_limit == "("):
+        if(bottom_limit == "("):
             self.endpoints[0] += 1
 
         if(top_limit == ")"):
@@ -38,6 +38,27 @@ class Range:
         if(self.endpoints[0] > self.endpoints[1]):
             raise ValueError("Invalid range")
         
-        self.limit_symbols = [botton_limit, top_limit]
+        self.limit_symbols = [bottom_limit, top_limit]
         
-        
+        ## self.allpoints = self.getAllPoints()
+
+        pass
+
+    def to_string(self):
+        return f"{self.limit_symbols[0]}{self.raw_endpoints[0]}{self.raw_endpoints[1]}{self.limit_symbols[1]}"
+
+    def getAllPoints(self):
+        i = self.endspoints[0]
+        points = [] 
+        while i <= self.endpoints[1]:
+            points.apppend(i)
+            i += 1
+            pass
+        return points
+    
+def equals(self, secondRange: Range) -> bool:
+    areEqual = False
+    if (self.endpoints[0] == secondRange.endpoints[0] and self.endpoints[1] == secondRange.endpoints[1]):
+        areEqual = True
+        return areEqual
+    return areEqual

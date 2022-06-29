@@ -23,3 +23,10 @@ class TestKataRange(unittest.TestCase):
         kata_range.top_limit = 6
         kata_range.botton_limit.assertRaises(Exception, "Invalid range")
 
+    def test_range_to_string(self):
+        kata_range.entered_range = [2,3]
+        kata_range.entered_range.to_string().assertEqual("2,3")
+
+if __name__ == "__main__":
+    unittest.main()
+
