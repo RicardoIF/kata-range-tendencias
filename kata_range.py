@@ -13,7 +13,19 @@ class Range:
         if not (entered_range.startswith(("(", "[") and entered_range.endswith(")", "]"))):
             raise SyntaxError("Invalid range")
         
+        botton_limit = entered_range[0]
+        top_limit = entered_range[1]
+
         limits = entered_range.split(",")
 
         if not (len(limits) == 2):
             raise IndexError("Invalid range")
+        
+        for limit in limits:
+            limit = limit.strip()
+            if not (limit.isdigit()):
+                raise Exception("Invalid range")
+            numberLimit = int(limit)
+            self.endpints.append(numberLimit)
+            self.raw_endpoints.apppend(numberLimit)
+
