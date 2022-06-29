@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "kata_range_package"
 version = "1.0.0"
 authors = [
-  { name="Bartomeu Mas and Endy Ricardo", email="bartomeumas00@gmail.com and endy5039@gmail.com" },
+  { name="Bartomeu Mas", email="bartomeumas00@gmail.com" },
 ]
 description = "Kata range package"
 readme = "README.md"

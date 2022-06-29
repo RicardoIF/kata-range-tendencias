@@ -7,7 +7,6 @@ class TestKataRange(unittest.TestCase):
         rnge = Range(entered_range)
         rnge.assertRaises(SyntaxError, "Invalid range")
 
-
     def test_bottomlimit_greater_than_toplimit(self):
         entered_range = "(8, 6]"
         rnge = Range(entered_range)
@@ -39,6 +38,12 @@ class TestOverlaps(unittest.TestCase):
         first_range = Range("[4, 10]")
         second_range = Range("[12, 22]")
         self.assertEqual(first_range.overlapsRange(second_range), False)
+
+class TestToString(unittest.TestCase):
+    def test_range_to_string(self):
+        rnge = Range([3, 4])
+        expectedResult = "[3, 4]"
+        self.assertEqual(rnge, expectedResult)
 
 if __name__ == "__main__":
     unittest.main()
