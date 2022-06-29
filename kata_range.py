@@ -39,8 +39,7 @@ class Range:
             raise ValueError("Invalid range")
         
         self.limit_symbols = [bottom_limit, top_limit]
-        
-        ## self.allpoints = self.getAllPoints()
+        self.allpoints = self.getAllPoints()
 
         pass
 
@@ -62,3 +61,13 @@ def equals(self, secondRange: Range) -> bool:
         areEqual = True
         return areEqual
     return areEqual
+
+def overlapsRange(self, secondRange: Range) -> bool:
+    overlaps = False
+    for value in secondRange.allpoints:
+        if (value in self.allpoints):
+            overlaps = True
+            return overlaps
+            break
+    return overlaps
+pass
