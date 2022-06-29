@@ -68,6 +68,5 @@ def overlapsRange(self, secondRange: Range) -> bool:
         if (value in self.allpoints):
             overlaps = True
             return overlaps
-            break
     return overlaps
 pass
