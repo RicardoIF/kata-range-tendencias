@@ -10,4 +10,10 @@ class Range:
         entered_range = entered_range.strip()
         if not (all(range_symbol in VALID_SYMBOLS for range_symbol in entered_range)):
             raise SyntaxError("Invalid range")
+        if not (entered_range.startswith(("(", "[") and entered_range.endswith(")", "]"))):
+            raise SyntaxError("Invalid range")
         
+        limits = entered_range.split(",")
+
+        if not (len(limits) == 2):
+            raise IndexError("Invalid range")
